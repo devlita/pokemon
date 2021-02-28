@@ -18,9 +18,9 @@ function App() {
         <Router>
           <Navbar />
           <Switch>
-            <Route path="/pokemon" component={Pokemon} />
-            <Route path="/my-pokemon" component={MyPokemon} />
-            <Route path="/pokemon-detail" component={PokemonDetail} />
+            <Route exact path="/pokemon" component={Pokemon} />
+            <Route exact path="/my-pokemon" component={MyPokemon} />
+            <Route exact path="/pokemon-detail" component={PokemonDetail} />
           </Switch>
         </Router>
       </ApolloProvider>

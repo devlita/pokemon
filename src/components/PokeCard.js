@@ -3,7 +3,7 @@ import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { GET_POKEMONS } from '../graphql/Query';
 import {Link} from 'react-router-dom';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 function PokeCard() {
   const {
@@ -23,24 +23,24 @@ function PokeCard() {
         data.pokemons.results &&
         data.pokemons.results.map((pokemon) => (
           <Card>
-            <div>
-              <img 
-                src={pokemon.image}
-                alt={pokemon.name}/
-              >
-              <Link 
+            <Link 
                 to={{
                   pathname: "/pokemon-detail",
                   state: { pokemon: pokemon }
                 }}
               >
+              <img 
+                src={pokemon.image}
+                alt={pokemon.name}
+              />
+              <p>
                 {pokemon.name}
-              </Link>
+              </p>
               <div>
                 Owned: 0
               </div>
-            </div>
-          </Card>
+            </Link> 
+          </Card>   
         ))}
     </Container>
   );
@@ -60,10 +60,24 @@ const Card = styled.div`
   background-color: #F8F8F8;
   text-align: center;
   border-radius: 10px;
+  
   a {
     font-size: 1.2rem;
     text-decoration: none;
-    color: #3473AD;
+    color: #303030;
+  }
+
+  p {
+    text-transform: capitalize;
+  }
+
+  @media screen and (max-width: 960px) {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    width: 8rem;
+    a {
+      font-size: 1rem;
+    }
   }
 `;
 

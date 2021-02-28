@@ -1,8 +1,8 @@
 import '../App.css';
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useQuery } from "@apollo/react-hooks";
+import styled from '@emotion/styled';
 import { GET_POKEMON } from '../graphql/Query';
-import styled from 'styled-components';
 
 function DetailCard(result) { 
   const current = result.pokemon;

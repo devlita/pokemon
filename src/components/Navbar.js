@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import styled from 'styled-components';
-
+import styled from '@emotion/styled';
 import logo from '../images/Pokemon-Logo.png'
 
 const Navbar = () => {
@@ -61,6 +60,11 @@ const NavLink = styled.div`
     .active {
         color: #FFFFFF;
         border-bottom: 2px solid #FFCB05
+    }
+    @media screen and (max-width: 960px) {
+        a {
+            font-size: 0.8rem;
+        }
     }
 `;
 

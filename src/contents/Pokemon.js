@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PokeCard from '../components/PokeCard';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 class Pokemon extends Component {
     render() {
