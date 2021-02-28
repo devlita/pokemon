@@ -47,16 +47,16 @@ function PokeCard() {
 };
 
 const Container = styled.div`
-  margin: 0 2rem;
+  margin: 1.5rem;
   display: flex;
   flex-wrap: wrap;
-  align-content: space-between;
+  justify-content: center;
 `;
 
 const Card = styled.div`
   margin: 1rem;
   padding: 1rem;
-  width: 8rem;
+  width: 12rem;
   background-color: #F8F8F8;
   text-align: center;
   border-radius: 10px;

@@ -6,9 +6,6 @@ class Pokemon extends Component {
     render() {
         return (
             <Container>
-                <h1>
-                    Pokemon List
-                </h1>
                 <PokeCard />
             </Container>
         )
