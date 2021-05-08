@@ -1,8 +1,10 @@
 import '../App.css';
-import React from "react";
+import React, { useState }from "react";
 import { useQuery } from "@apollo/react-hooks";
 import styled from '@emotion/styled';
+import { v4 as uuidv4 } from 'uuid';
 import { GET_POKEMON } from '../graphql/Query';
+import { Storage } from '../storage/indexedDB';
 
 function DetailCard(result) { 
   const current = result.pokemon;
@@ -30,7 +32,10 @@ function DetailCard(result) {
             {data.pokemon.name}
         </Name>
 
-        <CatchBtn>
+        <CatchBtn
+          onClick={handleCatchPoke}
+          key={data.pokemon.id}
+        >
           Catch!
         </CatchBtn>
       </Description>
@@ -77,7 +82,16 @@ function DetailCard(result) {
       </Description>
     </Container>
   );
+
+  function handleCatchPoke() {
+    const pokemon = (data.pokemon);
+      pokemon.myPokemonId = uuidv4();
+      Storage.catchPoke(data.pokemon);
+  }
+
 };
+
+
 
 const Container = styled.div`
   display: flex;
